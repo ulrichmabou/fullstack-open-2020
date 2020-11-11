@@ -1,0 +1,24 @@
+{
+  "name": "notes-backend",
+  "version": "0.0.1",
+  "description": "backend for the notes taking app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd /Users/ulrichmabou/dev/fullstack-open/notes && npm run build --prod && cp -r build /Users/ulrichmabou/dev/fullstack-open/notes-backend",
+    "deploy": "git push heroku main",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",    
+    "logs:prod": "heroku logs --tail"
+  },
+  "author": "Ulrich Mabou",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
